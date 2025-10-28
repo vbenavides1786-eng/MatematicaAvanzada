@@ -6,3 +6,5 @@ evaluaciones del curso
 
 <hr>
 esta es mi primera página web subida  a las 6:01pm
+
+<https://vbenavides1786-eng.github.io/MatematicaAvanzada/#(10)>
