@@ -1,0 +1,74 @@
+---
+title: "analisis exploratorio"
+author: "Vanessa Benavides"
+date: "2025-10-28"
+output: slidy_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## R Markdown
+
+This is an R Markdown presentation. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.
+
+## Slide with Bullets
+
+- Bullet 1
+- Bullet 2
+- Bullet 3
+
+## Slide with R Output
+
+```{r cars, echo = TRUE}
+summary(cars)
+```
+
+## Slide with Plot
+
+```{r pressure}
+plot(pressure)
+```
+
+## Crear un dataset a partir de datos estadísticos
+
+en muchas ocasiones encontramos bibliografía que nos trae como único dato de un dataset lo que se conoce como valores paramétricos. Imaginemos que en un artículo científico se nos dice que el tiempo medio entre fallos de un motor eléctrico es de 196 días con un desvio estandar de 60.
+Crearemos un conjunto de datos para hacer simulaciones con estos dos parámetros
+
+```{r, echo=TRUE}
+mtbf = rnorm(500,196,60)
+```
+
+## Histograma de los datos
+
+```{r}
+hist(mtbf)
+```
+
+
+
+```{r}
+indices <- as.integer(runif(90,1,500))
+indices
+```
+
+## Obtener elementos de una lista
+Para obtener elementos de juna lista se usa el comando mtbf[a], donde a es el número del elemento a seleccionar de la lista.
+En caso se requiera un conjunto seleccionado de elementos a= 125:130, es decir del elemento 125 a 130.
+
+## Como introducir valores ausentes en nuestro conjunto de datos
+
+```{r, echo=TRUE}
+mtbf[indices] <- NA
+```
+
+
+## box plot
+```{r}
+boxplot(mtbf, main="tiempo medio entre fallas", ylab="dias", col = "green")
+
+```
+
